@@ -1,0 +1,129 @@
+---
+title: "Rworksheet_Holleza3a.R"
+output: html_document
+date: "2023-10-07"
+---
+
+#USING VECTORS
+```{r no1a}
+uppercase <- LETTERS[1:11]
+uppercase
+```
+
+```{r no1b}
+oddletters<-LETTERS[seq(1,25,2)]
+oddletters
+```
+
+```{r no1c}
+letvowels<-c(letters[(letters %in% c ("a","e","i","o","u"))], LETTERS [(LETTERS %in% c("A","E","I","O","U"))])
+letvowels
+
+```
+
+```{r no1d}
+last5lowercase<-tail(letters,5)
+last5lowercase
+
+```
+
+```{r no1e}
+btwnlowercase<-letters[15:24]
+btwnlowercase
+```
+
+```{r 2a}
+city <- c("Tuguegarao City", "Manila", "Iloilo City", "Tacloban", "Samal Island", "Davao City")
+city
+```
+
+```{r 2b}
+temp <- c(42, 39, 34, 34, 30, 27)
+temp
+```
+
+```{r 2c}
+df<-data.frame(city,temp)
+df
+```
+
+```{r 2d}
+names(df) <- c("City", "Temperature")
+df
+```
+
+```{r 2e}
+str(df)
+
+```
+
+```{r 2f}
+df[3:4,]
+```
+
+```{r 2g}
+highest.temp.city<-df$City[which.max(df$Temperature)]
+highest.temp.city
+lowest.temp.city<-df$City[which.min(df$Temperature)]
+lowest.temp.city
+```
+
+#USING MATRIX
+
+```{r matrix2a}
+matrix1<-matrix(c(1:8,11:14),ncol=4,nrow=3)
+matrix1
+#it will display 4 columns and 3 rows with the numbers from 1 to 14
+```
+
+```{r matrix2b}
+matrix(c(1:8,11:14),ncol=4,nrow=3) * 2
+#it doubles the value of the numbers from 1 to 14 
+```
+
+```{r m2c}
+matrix(c(1:8,11:14),ncol=4,nrow=3)[2,]
+#[1]  2  5  8 13
+```
+
+```{r m2d}
+matrix(c(1:8,11:14),ncol=4,nrow=3)[1:2,c(3,4)]
+```
+
+```{r m2e}
+matrix(c(1:8,11:14),ncol=4,nrow=3)[3, c(2,3)]
+```
+
+```{r m2f}
+matrix(c(1:8,11:14),ncol=4,nrow=3)[,4]
+```
+
+```{r m2g}
+matrix2<-matrix(c(1:8,11:14),ncol=4,nrow=3) * 2
+rownames(matrix2) <- c("isa", "dalawa", "tatlo")
+colnames(matrix2) <- c("uno", "dos", "tres", "quatro")
+matrix2
+```
+
+```{r m2h}
+dim(matrix1)<- c(6,2)
+matrix1
+```
+
+#USING ARRAYS
+
+```{r a3a}
+numbers<-c(1, 2, 3, 6, 7, 8, 9, 0, 3, 4, 5, 1)
+numbers
+threeDarray<- array(numbers, dim = c(2, 4, 3))
+threeDarray
+```
+
+```{r a3b}
+#My array has 3 dimensions.
+```
+
+```{r a3c}
+dimnames(threeDarray) <- list(c ("a","b"), LETTERS[1:4], c("1st-Dimensional Array", "2nd-Dimensional Array", "3rd-Dimensional Array") )
+threeDarray
+```
